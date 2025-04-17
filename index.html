@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC QP</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Cấu hình nền và màu sắc chủ đạo theo quân đội */
+        body {
+            background-color: #2c3e50; /* Màu xám đậm */
+            font-family: 'Arial', sans-serif;
+            color: #ecf0f1; /* Màu sáng để tạo sự tương phản */
+        }
+
+        /* Tiêu đề */
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #d5dbdb; /* Màu sáng nhạt */
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Thiết kế nút album */
+        .btn-primary {
+            background-color: #27ae60; /* Màu xanh lá cây quân đội */
+            border-color: #1e8449;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            width: 100%; /* Đảm bảo các nút có chiều rộng bằng nhau */
+        }
+
+        .btn-primary:hover {
+            background-color: #1e8449; /* Màu xanh lá cây tối */
+            border-color: #145a32;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Album */
+        .album-title {
+            font-size: 2rem;
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 500;
+            color: #ecf0f1;
+        }
+
+        /* Hiệu ứng hover cho hình ảnh */
+        .carousel-item img {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+        }
+
+        .carousel-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hiệu ứng ẩn/hiện album */
+        .album-images {
+            display: none;
+        }
+
+        /* Đảm bảo mỗi nút sẽ có cùng chiều rộng và đều được căn giữa */
+        .album-title button {
+            margin: 10px 0;
+            width: 100%; /* Đảm bảo các nút có chiều rộng bằng nhau */
+        }
+
+        /* Cải tiến màu sắc cho các điều khiển carousel */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #27ae60; /* Màu xanh lá cây quân đội cho các điều khiển */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container py-4">
+    <h1>SRC QP</h1>
+
+    <!-- Album 1 -->
+    <div class="album">
+        <h3 class="album-title text-center">
+            <button class="btn btn-primary" onclick="toggleAlbum('album1')">VẤN ĐÁP</button>
+        </h3>
+        <div id="album1" class="album-images">
+            <div id="carouselAlbum1" class="carousel slide" data-bs-ride=""> <!-- Loại bỏ "carousel" -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img1/1.jpg" class="d-block w-100" alt="Ảnh 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img1/2.jpg" class="d-block w-100" alt="Ảnh 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img1/3.jpg" class="d-block w-100" alt="Ảnh 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img1/4.jpg" class="d-block w-100" alt="Ảnh 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img1/5.jpg" class="d-block w-100" alt="Ảnh 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img1/6.jpg" class="d-block w-100" alt="Ảnh 6">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAlbum1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAlbum1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Album 2 -->
+    <div class="album">
+        <h3 class="album-title text-center">
+            <button class="btn btn-primary" onclick="toggleAlbum('album2')">HỌC PHẦN 1</button>
+        </h3>
+        <div id="album2" class="album-images">
+            <div id="carouselAlbum2" class="carousel slide" data-bs-ride=""> <!-- Loại bỏ "carousel" -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img2/1.jpg" class="d-block w-100" alt="Ảnh 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/2.jpg" class="d-block w-100" alt="Ảnh 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/3.jpg" class="d-block w-100" alt="Ảnh 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/4.jpg" class="d-block w-100" alt="Ảnh 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/5.jpg" class="d-block w-100" alt="Ảnh 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/6.jpg" class="d-block w-100" alt="Ảnh 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/7.jpg" class="d-block w-100" alt="Ảnh 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/8.jpg" class="d-block w-100" alt="Ảnh 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/9.jpg" class="d-block w-100" alt="Ảnh 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img2/10.jpg" class="d-block w-100" alt="Ảnh 10">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAlbum2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAlbum2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Album 3 -->
+    <div class="album">
+        <h3 class="album-title text-center">
+            <button class="btn btn-primary" onclick="toggleAlbum('album3')">HỌC PHẦN 2</button>
+        </h3>
+        <div id="album3" class="album-images">
+            <div id="carouselAlbum3" class="carousel slide" data-bs-ride=""> <!-- Loại bỏ "carousel" -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img3/1.jpg" class="d-block w-100" alt="Ảnh 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img3/2.jpg" class="d-block w-100" alt="Ảnh 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img3/3.jpg" class="d-block w-100" alt="Ảnh 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img3/4.jpg" class="d-block w-100" alt="Ảnh 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img3/5.jpg" class="d-block w-100" alt="Ảnh 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img3/6.jpg" class="d-block w-100" alt="Ảnh 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img3/7.jpg" class="d-block w-100" alt="Ảnh 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img3/8.jpg" class="d-block w-100" alt="Ảnh 8">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAlbum3" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAlbum3" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Toggle album visibility and hide all other albums
+    function toggleAlbum(albumId) {
+        // Hide all albums first
+        var albums = document.querySelectorAll('.album-images');
+        albums.forEach(function(album) {
+            // Ẩn tất cả album khác
+            if (album.id !== albumId) {
+                album.style.display = 'none';
+            }
+        });
+        
+        var selectedAlbum = document.getElementById(albumId);
+        // Kiểm tra nếu album đã mở, sẽ đóng lại
+        if (selectedAlbum.style.display === 'block') {
+            selectedAlbum.style.display = 'none';
+        } else {
+            selectedAlbum.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
